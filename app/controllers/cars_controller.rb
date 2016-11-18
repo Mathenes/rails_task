@@ -1,10 +1,10 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :set_car, only: [:show]
 
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.joins(:model).paginate(:page => params[:page], :per_page => 4).
+    @cars = Car.joins(:model).paginate(:page => params[:page], :per_page => 8).
     order("#{Model.table_name}.#{sort_column} #{sort_direction}")
   end
 

@@ -13,7 +13,8 @@ manufacturers = [
   {name:"Renault"},
   {name:"Ferrari"},
   {name:"McLaren"},
-  {name:"Hyundai"}
+  {name:"Hyundai"},
+  {name:"Jeep"}
 ]
 
 Manufacturer.create(manufacturers)
@@ -55,11 +56,29 @@ cars = [
     acceleration: 2.8,
     model: Model.new(name:"P1", manufacturer_id: Manufacturer.find_by_name("McLaren").id)
   },
-  { image: File.open(Rails.root + "public/images_seed/hb20.png") ,
+  { image: File.open(Rails.root + "public/images_seed/hb20.jpg") ,
     engine_size: 2,
     speed: 99,
     acceleration: 10.4,
     model: Model.new(name:"HB20", manufacturer_id: Manufacturer.find_by_name("Hyundai").id)
+  },
+  { image: File.open(Rails.root + "public/images_seed/ix35.png") ,
+    engine_size: 2,
+    speed: 99,
+    acceleration: 9,
+    model: Model.new(name:"IX35", manufacturer_id: Manufacturer.find_by_name("Hyundai").id)
+  },
+  { image: File.open(Rails.root + "public/images_seed/jimmy.jpg") ,
+    engine_size: 3,
+    speed: 99,
+    acceleration: 15,
+    model: Model.new(name:"Jimmy", manufacturer_id: Manufacturer.find_by_name("Jeep").id)
+  },
+  { image: File.open(Rails.root + "public/images_seed/palio_2.jpg") ,
+    engine_size: 1,
+    speed: 81,
+    acceleration: 10.4,
+    model: Model.new(name:"Palio", manufacturer_id: Manufacturer.find_by_name("Fiat").id)
   }
 ]
 
