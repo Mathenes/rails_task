@@ -49,7 +49,7 @@ group :development do
 end
 
 group :production do
-  gem 'activerecord-mysql-adapter'
+  gem 'activerecord-mysql2-adapter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
