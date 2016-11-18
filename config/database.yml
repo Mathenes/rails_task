@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *default
+  database: rails_task_development
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
