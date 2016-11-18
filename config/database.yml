@@ -22,7 +22,7 @@ test:
   database: rails_task_test
 
 production:
-  <<: *default
+  adapter: mysql2
   database: rails_task_development
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['MYSQL_USERNAME'] %>
