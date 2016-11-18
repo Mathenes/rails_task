@@ -1,18 +1,18 @@
 development:
-  adapter: postgresql
+  adapter: mysql2
   pool: 5
   timeout: 5000
   database: rails_task_development
   usernamme: root
 
 test:
-  adapter: postgresql
+  adapter: mysql2
   pool: 5
   timeout: 5000
   database: rails_task_test
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
