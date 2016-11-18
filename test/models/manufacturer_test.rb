@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ManufacturerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "should not save manufacturer without name" do
+    manufacturer = Manufacturer.new
+    assert_not manufacturer.save
+  end
 end

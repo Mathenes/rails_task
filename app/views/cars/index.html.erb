@@ -9,17 +9,23 @@
 <h1> Cars List </h1>
 
 <div class="row">
+  <%= will_paginate @cars, class: "apple_pagination" %>
+</div>
+
+<div class="row">
   <div class="col-lg-12">
 
   <div class="row">
     <% @cars.each_with_index do |car,i| %>
       <div class="col-lg-3 col-xs-6 col-md-4">
         <div class="thumbnail">
-          <%= image_tag car.image.url, class: "img-thumbnail" %>
+          <%= link_to car, class: "thumbnail" do %>
+            <%= image_tag car.image.url, class: "img-thumbnail" %>
+          <% end %>
+
           <div class="caption">
-            <h3><%= car.name %></h3>
-            <h4><%= car.model.manufacturer_name %></h4>
-            <p><%= link_to 'View', car, {class:"btn btn-info", role:"button"} %>  <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger", role:"button" %></p>
+            <h3><%= car.model.manufacturer_name %></h3>
+            <h4><%= car.name %></h4>
           </div>
         </div>
       </div>

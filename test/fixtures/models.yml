@@ -3,7 +3,9 @@
 one:
   name: MyString
   manufacturer: one
+  car: one
 
 two:
   name: MyString
   manufacturer: two
+  car: two

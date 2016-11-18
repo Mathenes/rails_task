@@ -5,11 +5,9 @@ one:
   engine_size: 1.5
   speed: 1
   acceleration: 1.5
-  model: one
 
 two:
   image: MyString
   engine_size: 1.5
   speed: 1
   acceleration: 1.5
-  model: two
