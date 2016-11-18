@@ -7,4 +7,5 @@ class Car < ApplicationRecord
   delegate :name, to: :model
 
   mount_uploader :image, ImageUploader
+
 end

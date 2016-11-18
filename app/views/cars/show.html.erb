@@ -10,7 +10,6 @@
 <h1> Car Details <span class="label label-default"><%= link_to 'Back', :back %></span></h1>
 
 <div class="row">
-  <!-- <div class="col-sm-6 col-md-4"> -->
     <div class="thumbnail">
       <%= image_tag @car.image.url, class: "img-thumbnail" %>
       <div class="caption">
@@ -21,5 +20,4 @@
         <h3> <%= label :car, :acceleration %> <span class="label label-default"><%= @car.acceleration %></span></h3>
       </div>
     </div>
-  <!-- </div> -->
 </div>

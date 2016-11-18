@@ -4,7 +4,8 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.paginate(:page => params[:page], :per_page => 4)
+    @cars = Car.joins(:model).paginate(:page => params[:page], :per_page => 4).
+    order("#{Model.table_name}.#{sort_column} #{sort_direction}")
   end
 
   # GET /cars/1
@@ -62,13 +63,22 @@ class CarsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_car
-      @car = Car.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_car
+    @car = Car.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def car_params
-      params.require(:car).permit(:image, :engine_size, :speed, :acceleration, model_attributes: [:name, :manufacturer_id])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def car_params
+    params.require(:car).permit(:image, :engine_size, :speed, :acceleration, model_attributes: [:name, :manufacturer_id])
+  end
+
+  #Sanitizing methods
+  def sort_column
+    Model.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
 end

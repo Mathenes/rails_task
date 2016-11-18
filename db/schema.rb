@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20161116210357) do
 
-  create_table "cars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
     t.string   "image"
     t.float    "engine_size",  limit: 24
     t.integer  "speed"
@@ -21,11 +24,11 @@ ActiveRecord::Schema.define(version: 20161116210357) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "manufacturers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "manufacturers", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "models", force: :cascade do |t|
     t.string   "name"
     t.integer  "manufacturer_id"
     t.integer  "car_id"
