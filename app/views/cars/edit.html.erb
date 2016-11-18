@@ -1,0 +1,10 @@
+<% content_for :title do %>
+<span class="label label-default">Edit Car</span>
+<% end %>
+
+<div class="col-lg-6">
+<h1>Editing Car <small> <%= link_to 'View Car', @car %> </small></h1>
+
+<%= render 'form', car: @car %>
+
+</div>

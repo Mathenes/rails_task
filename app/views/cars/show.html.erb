@@ -1,0 +1,24 @@
+<% if notice %>
+  <div class="alert alert-info" role="alert"><%= notice %></div>
+<% end %>
+
+<% content_for :title do %>
+<span class="label label-default">Car Details</span>
+<% end %>
+
+<h1> Car Details </h1>
+
+<div class="row">
+  <!-- <div class="col-sm-6 col-md-4"> -->
+    <div class="thumbnail">
+      <%= image_tag @car.image.url, class: "img-thumbnail" %>
+      <div class="caption">
+        <h3> <%= label :model, :name %> <span class="label label-default"><%= @car.name %></span></h3>
+        <h3> <%= label :car, :manufacturer %> <span class="label label-default"><%= @car.model.manufacturer_name %></span></h3>
+        <h3> <%= label :car, :engine_size %> <span class="label label-default"><%= @car.engine_size %></span></h3>
+        <h3> <%= label :car, :speed %> <span class="label label-default"><%= @car.speed %></span></h3>
+        <h3> <%= label :car, :acceleration %> <span class="label label-default"><%= @car.acceleration %></span></h3>
+      </div>
+    </div>
+  <!-- </div> -->
+</div>
